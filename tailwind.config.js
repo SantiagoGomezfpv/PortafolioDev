@@ -3,7 +3,7 @@ const colors = require("tailwindcss/colors");
 const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
- 
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -16,8 +16,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        'primario': '#243c5a',
-        'secundiario': '#243c5a',
+        'primario': '#21251f',
+        'secundiario': '#4e515c',
+        'colorVerd': '#c8f560',
+        'colorMor': '#7862f8',
       },
     }
   },

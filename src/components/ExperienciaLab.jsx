@@ -1,53 +1,81 @@
-//  "use client";
-import React from "react";
+// "use client";
 import { StickyScroll } from "./ui/sticky-scroll-reveal";
+import PagPyg from '../assets/PaginaPyg.png';
+import CursoReact  from '../assets/CursoReact.png';
+import AppPyg from '../assets/AppPyg.png';
+import ArticuloInvest from '../assets/ArticuloInv.png';
 
 const content = [
-  {
-    title: "Collaborative Editing",
-    description:
-      "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
-    content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        Collaborative Editing
-      </div>
-    ),
-  },
-  {
-    title: "Real time changes",
-    description:
-      "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
-    content: (
-      <div className="h-full w-full  flex items-center justify-center text-white">
-        XD xD
-      </div>
-    ),
-  },
-  {
-    title: "Version control",
-    description:
-      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
-    content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white">
-        Version control
-      </div>
-    ),
-  },
-  {
-    title: "Running out of content",
-    description:
-      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
-    content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        Running out of content
-      </div>
-    ),
-  },
+    {
+      title: "Pygmalion",
+      description:
+          <div className=" min-h-[12rem] text-left">
+              <p> Se desarrollo la pagina web utilizandfo Wordpress </p>
+          </div>,
+      content: (
+          <div className="h-full w-full bg-transparent flex flex-col items-center justify-center text-white">
+              <img
+                  src={PagPyg}
+                  alt="linear board demo"
+                  />
+              <p> Enero-Actualmente /2024</p>
+          </div>
+      ),
+    },
+    {
+      title: "ITM (Freelance)",
+      description:
+          <div className=" min-h-[12rem] text-left">
+              <p> Formador junior en el componente tecnológico de la ruta formativa REACT JS </p>
+          </div>,
+      content: (
+          <div className="h-full w-full bg-transparent flex flex-col items-center justify-center text-white">
+              <img
+                  src={CursoReact}
+                  alt="linear board demo"
+                  />
+              <p> Agosto-Diciembre /2023</p>
+          </div>
+      ),
+    },
+    {
+      title: "Pygmalion",
+      description:
+          <div className=" min-h-[12rem] text-left">
+              <p> Se desarrollo la Aplicacion movil Innobot BT Controller 100+ descargas, adicionalmente se avanzo en el desarrollo de una veersion nueva de software scoring</p>
+          </div>,
+      content: (
+          <div className="h-full w-full bg-transparent flex flex-col items-center justify-center text-white">
+              <img
+                  src={AppPyg}
+                  alt="linear board demo"
+                  />
+              <p> Mayo-Agosto/2023</p>
+          </div>
+      ),
+    },
+    {
+      title: "ITM (Freelance)",
+      description:
+          <div className=" min-h-[12rem] text-left">
+              <p> PROYECTO MINCIENCIAS 80740-475-2020 DENOMINADO SISTEMAS INTELIGENTES PARA EL MONITOREO DE CULTIVOS AGRÍCOLAS PERMANENTES Y TRANSITORIOS.</p>
+          </div>,
+      content: (
+          <div className="h-full w-full bg-transparent flex flex-col items-center justify-center text-white">
+              <img
+                  src={ArticuloInvest}
+                  alt="linear board demo"
+                  />
+              <p> Agosto- Diciembre/ 2022</p>
+              <p> Mayo- Septiembre / 2023</p>
+          </div>
+      ),
+    },
 ];
 export function StickyScrollRevealDemo() {
-  return (
+    return (
     <div className="p-10">
-      <StickyScroll content={content} />
+        <StickyScroll content={content} />
     </div>
-  );
+    );
 }

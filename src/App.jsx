@@ -1,7 +1,9 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
-import Particulas from "./components/Particle";
+// import Particulas from "./components/Particle";
+import { StickyScrollRevealDemo } from "./components/ExperienciaLab";
+import { SparklesPreview } from "./components/TitulosParticula";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -37,7 +39,7 @@ function App() {
     <>
     
       <div className="flex overflow-hidden justify-center items-center p-2 min-h-[100vh] text-white ">
-        <Particulas />
+        {/* <Particulas /> */}
         <div>
           <h1>Hola, soy</h1>
           <p>Soy ... 🤯</p>
@@ -49,26 +51,24 @@ function App() {
           <div
             id="skills"
             ref={scroller}
-            className=" flex overflow-x-hidden text-white w-[400vw] m-0 bg-neutral-900 relative h-screen"
+            className=" flex overflow-x-hidden text-white w-[400vw] m-0 bg-black relative h-screen"
           >
           <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div>
-   
             <section
               ref={skills}
-              className=" skill-set px-12 w-screen h-full ns-horizontal-section__item flex items-center z-50"
-            >
+              className="skill-set px-12 w-screen h-full ns-horizontal-section__item flex flex-col justify-center items-center z-50">
+            <SparklesPreview />
               Proyectos
             </section>
             <section
               ref={skills}
-              className=" skill-set px-12 w-screen h-full ns-horizontal-section__item flex items-center z-50"
-            >
-            Experiencia laboral
+              className="skill-set px-12 w-screen h-full ns-horizontal-section__item flex flex-col justify-center items-center z-50">
+              Experiencia laboral
+              <StickyScrollRevealDemo />
             </section>
             <section
               ref={skills}
-              className=" skill-set px-12 w-screen h-full ns-horizontal-section__item flex items-center z-50"
-            >
+              className="skill-set px-12 w-screen h-full ns-horizontal-section__item flex flex-col justify-center items-center z-50">
               Estudios
             </section>
           </div>
