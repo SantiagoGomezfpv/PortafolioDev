@@ -57,13 +57,12 @@ function App() {
             <section
               ref={skills}
               className="skill-set px-12 w-screen h-full ns-horizontal-section__item flex flex-col justify-center items-center z-50">
-            <SparklesPreview />
               Proyectos
             </section>
             <section
               ref={skills}
               className="skill-set px-12 w-screen h-full ns-horizontal-section__item flex flex-col justify-center items-center z-50">
-              Experiencia laboral
+              <SparklesPreview />
               <StickyScrollRevealDemo />
             </section>
             <section
