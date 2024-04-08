@@ -7,7 +7,7 @@ import { cn } from "../utils/cn";
 import { motion, useAnimation } from "framer-motion";
 
 type ParticlesProps = {
-  id?: string;
+  id: string; // Asegúrate de que id sea obligatorio y único
   className?: string;
   background?: string;
   particleSize?: number;
@@ -17,9 +17,10 @@ type ParticlesProps = {
   particleColor?: string;
   particleDensity?: number;
 };
+
 export const SparklesCore = (props: ParticlesProps) => {
   const {
-    id,
+    id, // Utiliza el id proporcionado como prop
     className,
     background,
     minSize,
@@ -54,7 +55,7 @@ export const SparklesCore = (props: ParticlesProps) => {
     <motion.div animate={controls} className={cn("opacity-0", className)}>
       {init && (
         <Particles
-          id={id || "tsparticles"}
+          id={id}
           className={cn("h-full w-full")}
           particlesLoaded={particlesLoaded}
           options={{

@@ -1,11 +1,11 @@
 import React from "react";
 import { SparklesCore } from "./ui/sparkles";
 
-export function SparklesPreview() {
+export function SparklesPreview({ frase }) {
   return (
     <div className="h-[10rem] w-full bg-transparent flex flex-col items-center justify-center overflow-hidden rounded-md">
       <h1 className="md:text-xl text-xl lg:text-5xl font-bold text-center text-white relative z-20 pb-2">
-        Experiencia laboral
+        {frase}
       </h1>
       <div className="w-[40rem] h-[5rem] relative">
         {/* Gradients */}
@@ -16,6 +16,7 @@ export function SparklesPreview() {
 
         {/* Core component */}
         <SparklesCore
+          id={frase}
           background="transparent"
           minSize={0.4}
           maxSize={1}
