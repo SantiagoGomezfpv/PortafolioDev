@@ -39,7 +39,7 @@ export const AnimatedTooltip = ({
         <>
         {items.map((item, idx) => (
             <div
-            className="-mr-4  relative group"
+            className="-mr-4 relative group"
             key={item.name}
             onMouseEnter={() => setHoveredIndex(item.id)}
             onMouseLeave={() => setHoveredIndex(null)}
@@ -63,10 +63,10 @@ export const AnimatedTooltip = ({
                     rotate: rotate,
                     whiteSpace: "nowrap",
                 }}
-                className="absolute -top-16  flex text-xs  flex-col items-center justify-center rounded-md bg-black z-50 shadow-xl px-4 py-2"
+                className="absolute -top-16 flex text-xs  flex-col items-center justify-center rounded-md bg-black z-50 shadow-xl px-4 py-2"
                 >
                 <div className="absolute inset-x-10 z-30 w-[20%] -bottom-px bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px " />
-                <div className="absolute  w-[40%] z-30 -bottom-px bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px " />
+                <div className="absolute w-[40%] z-30 -bottom-px bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px " />
                 <div className="font-bold text-white relative z-30 text-base">
                     {item.name}
                 </div>
@@ -79,7 +79,7 @@ export const AnimatedTooltip = ({
                 width={100}
                 src={item.image}
                 alt={item.name}
-                className="object-cover !m-0 !p-0 object-top rounded-full h-20 w-20 border-2 group-hover:scale-105 group-hover:z-30 border-white  relative transition duration-500"
+                className="object-cover !m-0 !p-0 object-top rounded-full size-16 md:size-[5vw] border-2 group-hover:scale-105 group-hover:z-30 border-white  relative transition duration-500"
             />
             </div>
         ))}

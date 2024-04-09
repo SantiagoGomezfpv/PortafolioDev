@@ -3,8 +3,8 @@ import { SparklesCore } from "./ui/sparkles";
 
 export function SparklesPreview({ frase }) {
   return (
-    <div className="h-[10rem] w-full bg-transparent flex flex-col items-center justify-center overflow-hidden rounded-md">
-      <h1 className="md:text-xl text-xl lg:text-5xl font-bold text-center text-white relative z-20 pb-2">
+    <div className="h-[10rem] w-[100vw] md:w-[50vw] bg-transparent flex flex-col items-center justify-center overflow-hidden rounded-md">
+      <h1 className="md:text-5xl text-4xl font-bold text-center text-white relative z-20 pb-2">
         {frase}
       </h1>
       <div className="w-[40rem] h-[5rem] relative">

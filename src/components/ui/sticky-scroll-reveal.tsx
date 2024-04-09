@@ -40,9 +40,10 @@ export const StickyScroll = ({
     });
 
     const backgroundColors = [
-    "var(--black)",
-    "var(--primario)",
-    "var(--neutral-900)",
+    "var(--transparent)",
+    // "var(--black)",
+    // "var(--primario)",
+    // "var(--neutral-900)",
     ];
   // const linearGradients = [
   //   "linear-gradient(to bottom right, var(--cyan-500), var(--emerald-500))",
@@ -50,53 +51,52 @@ export const StickyScroll = ({
   //   "linear-gradient(to bottom right, var(--orange-500), var(--yellow-500))",
   // ];
     return (
-    <motion.div
-        animate={{ backgroundColor: backgroundColors[activeCard % backgroundColors.length],}}
-        className="h-[35rem] w-[70rem] overflow-y-auto flex justify-center relative space-x-10 rounded-3xl shadow-[0_20px_25px_1px_rgba(0,0,0,0.3)] shadow-colorMor"
-        ref={ref}
-    >
-        <div className="div relative flex items-start pl-20">
-        <div className="max-w-2xl">
-            {content.map((item, index) => (
-            <div key={item.title + index} className="my-20 pt-28">
-                <motion.h2
-                initial={{
-                    opacity: 0,
-                }}
-                animate={{
-                    opacity: activeCard === index ? 1 : 0.3,
-                }}
-                className="text-2xl font-bold text-slate-100"
-                >
-                {item.title}
-                </motion.h2>
-                <motion.p
-                initial={{
-                    opacity: 0,
-                }}
-                animate={{
-                    opacity: activeCard === index ? 1 : 0.3,
-                }}
-                className="text-kg text-slate-300 max-w-sm mt-10 mb-20"
-                >
-                {item.description}
-                </motion.p>
-            </div>
-            ))}
-            <div className="h-40" />
-        </div>
-        </div>
         <motion.div
-        animate={{
-            background: 'transparent',
-        }}
-        className={cn(
-            "hidden lg:block h-full w-[40rem] bg-white sticky top-1 overflow-hidden",
-            contentClassName
-        )}
-        >
-        {content[activeCard].content ?? null}
-        </motion.div>
+            animate={{ backgroundColor: backgroundColors[activeCard % backgroundColors.length],}}
+            className="h-[60vh] w-[80vw] md:h-[60vh] md:w-[60vw] overflow-y-auto flex justify-center relative space-x-10 rounded-3xl shadow-2xl shadow-colorMor border-2 border-colorMor"
+            ref={ref}>
+            <div className="div relative flex items-start p-5 md:pl-20">
+                <div className="max-w-2xl">
+                    {content.map((item, index) => (
+                    <div key={item.title + index} className="pt-5 md:my-20 md:pt-28">
+                        <motion.h2
+                        initial={{
+                            opacity: 0,
+                        }}
+                        animate={{
+                            opacity: activeCard === index ? 1 : 0.3,
+                        }}
+                        className="text-2xl font-bold text-slate-100"
+                        >
+                        {item.title}
+                        </motion.h2>
+                        <motion.p
+                        initial={{
+                            opacity: 0,
+                        }}
+                        animate={{
+                            opacity: activeCard === index ? 1 : 0.3,
+                        }}
+                        className="text-kg text-slate-300 max-w-sm mt-10 mb-20"
+                        >
+                        {item.description}
+                        </motion.p>
+                    </div>
+                    ))}
+                    <div className="h-40" />
+                </div>
+            </div>
+            <motion.div
+            animate={{
+                background: 'transparent',
+            }}
+            className={cn(
+                "hidden lg:block h-full w-[40rem] bg-white sticky top-1 overflow-hidden",
+                contentClassName
+            )}
+            >
+                {content[activeCard].content ?? null}
+            </motion.div>
         </motion.div>
     );
 };

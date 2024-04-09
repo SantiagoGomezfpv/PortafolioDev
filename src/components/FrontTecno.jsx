@@ -98,21 +98,21 @@ const Frontend = [
     
     export function AnimatedTooltipPreview() {
     return (
-        <div>
-            <div className="flex flex-row items-center justify-center mb-10 w-full">
-                <h1 className="mr-5 text-2xl font-bold">Frontend</h1>
+        <div className="w-full">
+            <div className="flex flex-row items-center justify-center mb-3 md:mb-10 w-full">
+                <h1 className="mr-3 md:mr-5 text-xl md:text-2xl font-bold">Frontend</h1>
                 <AnimatedTooltip items={Frontend}/>
             </div>
-            <div className="flex flex-row items-center justify-center mb-10 w-full">
-                <h1 className="mr-5 text-2xl font-bold">Backend</h1>
+            <div className="flex flex-row items-center justify-center mb-3 md:mb-10 w-full">
+                <h1 className="mr-3 md:mr-5 text-xl md:text-2xl font-bold">Backend</h1>
                 <AnimatedTooltip items={Backend}/>
             </div>
-            <div className="flex flex-row items-center justify-center mb-10 w-full">
-                <h1 className="mr-5 text-2xl font-bold">Aprendiendo</h1>
+            <div className="flex flex-row items-center justify-center mb-3 md:mb-10 w-full">
+                <h1 className="mr-3 md:mr-5 text-xl md:text-2xl font-bold">Aprendiendo</h1>
                 <AnimatedTooltip items={Aprendiendo}/>
             </div>
-            <div className="flex flex-row items-center justify-center mb-10 w-full">
-                <h1 className="mr-5 text-2xl font-bold">Herramientas</h1>
+            <div className="flex flex-row items-center justify-center mb-3 md:mb-10 w-full">
+                <h1 className="mr-3 md:mr-5 text-xl md:text-2xl font-bold">Herramientas</h1>
                 <AnimatedTooltip items={Herramientas}/>
             </div>
         </div>
