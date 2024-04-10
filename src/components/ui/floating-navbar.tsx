@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 import { cn } from "../utils/cn";
 
@@ -15,56 +15,72 @@ export const FloatingNav = ({
 }) => {
     const { scrollYProgress } = useScroll();
     const [visible, setVisible] = useState(false);
+    const [hovered, setHovered] = useState(false);
+    const prevScrollYProgress = useRef<number | null>(null);
+    const timeoutId = useRef<number | null>(null);
 
-    useMotionValueEvent(scrollYProgress, "change", (current) => {
-        // Check if current is not undefined and is a number
-        if (typeof current === "number") {
-            let direction = current! - scrollYProgress.getPrevious()!;
-            if (scrollYProgress.get() < 0.05) {
-                setVisible(false);
-            } else {
-                if (direction < 0) {
-                    setVisible(true);
-                } else {
-                    setVisible(false);
+    // Función para manejar el evento de desplazamiento
+    useMotionValueEvent(scrollYProgress, "change", (latest) => {
+        if (prevScrollYProgress.current !== null) {
+            const velocity = latest - prevScrollYProgress.current;
+            if (velocity !== 0) {
+                setVisible(true);
+                // Si ya hay un timeout en curso, lo limpiamos
+                if (timeoutId.current !== null) {
+                    clearTimeout(timeoutId.current);
                 }
+                // Establecemos un nuevo timeout para ocultar el elemento después de un cierto tiempo de inactividad
+                timeoutId.current = window.setTimeout(() => {
+                    setVisible(false);
+                }, 500); // Aquí puedes ajustar el tiempo de espera (en milisegundos) antes de ocultar el elemento
             }
         }
+        prevScrollYProgress.current = latest;
     });
 
+    // Funciones para manejar los eventos de hover
+    const handleMouseEnter = () => { setHovered(true); };
+    const handleMouseLeave = () => { setHovered(false); };
     return (
-        <AnimatePresence mode="wait">
-            <motion.div
-                initial={{
-                    opacity: 1,
-                    y: -100,
-                }}
-                animate={{
-                    y: visible ? 0 : -100,
-                    opacity: visible ? 1 : 0,
-                }}
-                transition={{
-                    duration: 0.2,
-                }}
-                className={cn(
-                    "flex max-w-fit  fixed top-10 inset-x-0 mx-auto border border-transparent dark:border-white/[0.2] rounded-full dark:bg-black bg-white shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] pr-2 pl-8 py-2  items-center justify-center space-x-4",
-                    className
-                )}
-            >
-                {navItems.map((navItem: any, idx: number) => (
-                    <a
-                        key={`link-${idx}`}
-                        href={navItem.link}
-                        className={cn(
-                            "relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
-                        )}
-                    >
-                        <span className="block sm:hidden">{navItem.icon}</span>
-                        <span className="hidden sm:block text-sm">{navItem.name}</span>
-                    </a>
-                ))}
-
-            </motion.div>
+        <AnimatePresence>
+            {(visible || hovered) && (
+                <motion.div
+                    initial={{
+                        opacity: 0,
+                        y: -100,
+                    }}
+                    animate={{
+                        y: 0,
+                        opacity: 1,
+                    }}
+                    exit={{
+                        opacity: 0,
+                        y: -100,
+                    }}
+                    transition={{
+                        duration: 0.2,
+                    }}
+                    className={cn(
+                        "flex max-w-fit fixed top-5 inset-x-0 mx-auto border-2 border-colorMor rounded-full backdrop-blur-sm bg-gray-100/10 z-[5000] px-8 py-2 items-center justify-center space-x-4",
+                        className
+                    )}
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                >
+                    {navItems.map((navItem: any, idx: number) => (
+                        <a
+                            key={`link-${idx}`}
+                            href={navItem.link}
+                            className={cn(
+                                "relative items-center flex space-x-1 text-gray-100 hover:text-colorMor font-bold"
+                            )}
+                        >
+                            <span className="block sm:hidden">{navItem.icon}</span>
+                            <span className="hidden sm:block text-sm">{navItem.name}</span>
+                        </a>
+                    ))}
+                </motion.div>
+            )}
         </AnimatePresence>
     );
 };

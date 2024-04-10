@@ -43,17 +43,17 @@ export const InfiniteMovingCards = ({
     }
     const getDirection = () => {
         if (containerRef.current) {
-        if (direction === "left") {
-            containerRef.current.style.setProperty(
-            "--animation-direction",
-            "forwards"
-            );
-        } else {
-            containerRef.current.style.setProperty(
-            "--animation-direction",
-            "reverse"
-            );
-        }
+            if (direction === "left") {
+                containerRef.current.style.setProperty(
+                "--animation-direction",
+                "forwards"
+                );
+            } else {
+                containerRef.current.style.setProperty(
+                "--animation-direction",
+                "reverse"
+                );
+            }
         }
     };
     const getSpeed = () => {
@@ -67,54 +67,51 @@ export const InfiniteMovingCards = ({
         }
     }
 };
-return (
-    <div
-        ref={containerRef}
-        className={cn(
-            "scroller relative z-20 max-w-3xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
-            className
-        )}
-    >
-        <ul
-            ref={scrollerRef}
+    return (
+        <div
+            ref={containerRef}
             className={cn(
-            " flex min-w-full shrink-0 gap-4 py-0 md:py-4 w-max flex-nowrap",
-            start && "animate-scroll ",
-            pauseOnHover && "hover:[animation-play-state:paused]"
-            )}
-        >
-            {items.map((item, idx) => (
-            <li
-            // className=" flex items-center justify-center"
-            className="w-[70vw] min-h-[10vh] md:min-h-[20vh] relative rounded-2xl border flex-shrink-0 border-colorMor px-4 md:px-8 py-6 md:w-[22vw]"
-            style={{
-                background:
-                    "linear-gradient(180deg, var(--indigo-900), var(--transparent)",
-                }}
-                key={item.name}
-            >
-                <blockquote>
-                <div
-                    aria-hidden="true"
-                    className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
-                ></div>
-                <span className=" relative z-20 text-xl md:text-2xl font-bold leading-[1.6] text-gray-100">
-                    {item.quote}
-                </span>
-                <div className="relative z-20 mt-6 flex flex-row items-center">
-                    <span className="flex flex-col gap-1">
-                    <span className="text-sm md:text-lg leading-[1.6] text-gray-400 font-normal">
-                        {item.name}
+                "scroller relative z-20 max-w-3xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
+                className
+            )}>
+            <ul ref={scrollerRef}
+                className={cn(
+                " flex min-w-full shrink-0 gap-4 py-0 md:py-4 w-max flex-nowrap",
+                start && "animate-scroll ",
+                pauseOnHover && "hover:[animation-play-state:paused]"
+                )}>
+                {items.map((item, idx) => (
+                <li
+                // className=" flex items-center justify-center"
+                className="w-[70vw] min-h-[5vh] md:min-h-[20vh] relative rounded-2xl border flex-shrink-0 border-colorMor px-4 md:px-8 py-3 md:w-[22vw]"
+                style={{
+                    background:
+                        "linear-gradient(180deg, var(--indigo-900), var(--transparent)",
+                    }}
+                    key={item.name}
+                >
+                    <blockquote>
+                    <div
+                        aria-hidden="true"
+                        className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
+                    ></div>
+                    <span className=" relative z-20 text-xl md:text-2xl font-bold leading-[1.6] text-gray-100">
+                        {item.quote}
                     </span>
-                    <span className="text-xs  md:text-sm leading-[1.6] text-gray-400 font-bold">
-                        {item.title}
-                    </span>
-                    </span>
-                </div>
-                </blockquote>
-            </li>
-            ))}
-        </ul>
+                    <div className="relative z-20 mt-3 md:mt-6 flex flex-row items-center">
+                        <span className="flex flex-col gap-1">
+                        <span className="text-sm md:text-lg leading-[1.6] text-gray-400 font-normal">
+                            {item.name}
+                        </span>
+                        <span className="text-xs  md:text-sm leading-[1.6] text-gray-400 font-bold">
+                            {item.title}
+                        </span>
+                        </span>
+                    </div>
+                    </blockquote>
+                </li>
+                ))}
+            </ul>
         </div>
     );
 };

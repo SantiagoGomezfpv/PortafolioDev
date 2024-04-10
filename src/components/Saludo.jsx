@@ -8,14 +8,14 @@ export function TypewriterEffectSmoothDemo() {
     ];
     return (
         <div className="flex flex-col items-start justify-center w-full md:h-[40rem] md:w-[40rem] text-2xl text-wrap">
-            <div className="flex flex-col items-end justify-center w-full">
+            <a href="https://www.linkedin.com/in/santiago-gómez-ortega" target="_blank" rel="noopener noreferrer"  className="flex flex-col items-end justify-center w-full">
                 <span className='relative inline-flex overflow-hidden rounded-full p-[1px]'>
                     <span className='absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#000000_0%,#7862f8_50%,#000000_100%)]' />
                     <div className='inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-black px-3 py-2 text-xs font-medium text-gray-50 backdrop-blur-3xl'>
                         Disponible para trabajar
                     </div>
                 </span>
-            </div>
+            </a>
                 
             <TypewriterEffectSmooth words={words} />
             <p className="text-xl md:text-2xl"> <span className="text-colorMor">Ingeniero Electrónico</span> de Medellín, Colombia. Mi enfoque principal es el desarrollo web 
