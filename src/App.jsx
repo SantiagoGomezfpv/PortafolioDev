@@ -12,6 +12,7 @@ import { FloatingNavDemo } from "./components/NavFlotante";
 
 import Flecha from "./assets/Flecha2.png";
 import Foto1 from "./assets/Foto1.png";
+import Foto2 from "./assets/Foto2.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -99,11 +100,20 @@ function App() {
           </div>
         </div>
       </div> 
-      <div id="sobre-mi" className="flex justify-center items-center p-2 min-h-[100vh] text-gray-100">
-        <div>
-          <h1>Sobre mí</h1>
-          <p>ssss</p>
+      <div id="sobre-mi" className="flex flex-col mt-12 md:mt-0 md:flex-row justify-center items-center p-5 min-h-[100vh] text-gray-100">
+        <div className="flex flex-col justify-center items-start w-full md:w-[42rem]">
+          <h1 className="text-4xl md:text-5xl font-bold text-center z-50 mb-5">Sobre mí</h1>
+          <p className="text-base md:text-xl mb-3">
+            Mi nombre es Santiago Gómez, soy desarrollador <span className="text-colorMor"> front-end Junior</span>, donde me destaco por mi creatividad y mi constante esfuerzo por seguir aprendiendo y mejorando. Siempre estoy <span className="text-colorMor"> en busca de desafíos</span> que me permitan crecer profesionalmente.
+          </p>
+          <p className="text-base md:text-xl mb-3">
+            Como pasatiempo, me gusta volar <span className="text-colorMor">drones</span> y realizar <span className="text-colorMor"> proyectos electrónicos</span> en los que busco combinar mi conocimiento en ingeniería con el desarrollo web, integrando lo físico con lo digital.          
+          </p>
+          <p className="text-base md:text-xl ">
+            Entre mis logros más destacados se encuentra mi proyecto de grado en Ingeniería, donde entrené a una <span className="text-colorMor">IA</span> para reconocer especies de aves a partir de sus sonidos. Este modelo lo integré en una <span className="text-colorMor">API</span> para hacer más accesible esta tecnología.
+          </p>
         </div>
+        <img className="w-[90vw] md:w-[35vw] md:ml-12 z-50" src={Foto2} alt="Santi" />
       </div>
     </>
   );

@@ -58,7 +58,7 @@ export const StickyScroll = ({
             <div className="div relative flex items-start p-5 md:pl-20">
                 <div className="max-w-2xl">
                     {content.map((item, index) => (
-                    <div key={item.title + index} className="pt-5 md:my-20 md:pt-28">
+                    <div key={item.title + index} className=" md:my-20">
                         <motion.h2
                         initial={{
                             opacity: 0,
@@ -77,7 +77,7 @@ export const StickyScroll = ({
                         animate={{
                             opacity: activeCard === index ? 1 : 0.3,
                         }}
-                        className="text-kg text-slate-300 max-w-sm mt-10 mb-20"
+                        className="text-sm md:text-base text-slate-300 max-w-sm mt-4 md:mt-10 mb-20"
                         >
                         {item.description}
                         </motion.p>
