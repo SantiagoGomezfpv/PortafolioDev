@@ -98,7 +98,7 @@ const Frontend = [
         {
             id: 5,
             name: "Postman",
-            image:Postman    
+            image:LogoPostman    
         },
         ];
     

@@ -124,8 +124,7 @@ const content = [
             <div className="h-full w-full bg-transparent flex flex-col items-center justify-center text-white">
                 <img src={ArticuloInvest} alt="linear board demo"/>
                 <p className="text-xl md:text-2xl text-colorMor">Analista de datos Python</p>
-                <p> Agosto- Diciembre/ 2022</p>
-                <p> Mayo- Septiembre / 2023</p>
+                <p> Agosto 2022 - Septiembre 2023</p>
             </div>
         ),
     },
