@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@tsparticles/engine": "^3.3.0",
@@ -15,6 +17,7 @@
     "@tsparticles/slim": "^3.3.0",
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.25",
+    "gh-pages": "^6.1.1",
     "gsap": "^3.12.5",
     "lib-utils-ts": "^0.0.0-test",
     "react": "^18.2.0",

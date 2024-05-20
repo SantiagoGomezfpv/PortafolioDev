@@ -13,6 +13,7 @@ import LogoGit from '../assets/LogoGit.png';
 import LogoGitHub from '../assets/LogoGitHub.png';
 import LogoFirebase from '../assets/LogoFirebase.png';
 import LogoWordPress from '../assets/LogoWordPress.png';
+import LogoPostman from '../assets/LogoPostman.png';
 
 const Frontend = [
     {
@@ -76,23 +77,28 @@ const Frontend = [
     const Herramientas = [
         {
             id: 1,
-            name: "Next.js",
+            name: "Git",
             image:LogoGit
         },
         {
             id: 2,
-            name: "React Native",
+            name: "GitHub",
             image:LogoGitHub
         },
         {
             id: 3,
-            name: "JavaScript",
+            name: "Firebase",
             image:LogoFirebase    
         },
         {
             id: 4,
-            name: "TailwindCSS",
+            name: "WordPress",
             image:LogoWordPress    
+        },
+        {
+            id: 5,
+            name: "Postman",
+            image:Postman    
         },
         ];
     

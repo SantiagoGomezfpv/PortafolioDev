@@ -48,7 +48,7 @@ function App() {
 
   return (
     <>
-      <FloatingNavDemo/>
+      {/* <FloatingNavDemo/> */}
       <div className="flex overflow-hidden justify-center items-center p-10 min-h-[100vh] text-gray-100 ">
         <Presentacion/>
         <div className="flex flex-col md:flex-row justify-center items-center md:items-start z-50 w-full">
